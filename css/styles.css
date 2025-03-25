@@ -1,0 +1,246 @@
+@font-face {
+    src: url("https://www.axis-praxis.org/fonts/webfonts/MetaVariableDemo-Set.woff2")
+        format("woff2");
+    font-family: "Meta";
+    font-style: normal;
+    font-weight: normal;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #394a5b;
+    color: #ffffff;
+    margin: 0;
+    background-image: url("../assets/img/bannerGIF.gif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+h1 {
+    transition: all 0.5s;
+    -webkit-text-stroke: 4px #d6f4f4;
+    font-variation-settings: "wght" 900, "ital" 1;
+    font-size: 10rem;
+    text-align: center;
+    color: transparent;
+    font-family: "Meta", sans-serif;
+    text-shadow: 10px 10px 0px #016CB4,
+        15px 15px 0px #001834,
+        20px 20px 0px #000309,
+        25px 25px 0px #0153AC,
+        45px 45px 10px #01477F;
+    cursor: default;
+}
+
+img {
+    max-width: 100%; /* Image will never exceed its container's width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.resized-video {
+    width: 495px; /* Set a fixed width */
+    height: 320px; /* Set a fixed height */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+.video-container {
+    display: flex; /* Align images side by side */
+    gap: 5px; /* Add space between images */
+}
+
+.eslogan {
+    background-color: #00030968;
+    font-variation-settings: "ital" 1;
+    font-size: 2rem;
+    text-align: center;
+    font-family: "Meta", sans-serif;
+    cursor: default;
+}
+
+.form {
+    text-align: center;
+}
+
+.map {
+    text-align: left;
+}
+
+label {
+    font-size: 1.25rem;
+    font-family: "Meta", sans-serif;
+}
+
+form
+{
+    background-color: #00030968;
+}
+
+h2 {
+    font-variation-settings: "ital" 1;
+    font-size: 2rem;
+    text-align: center;
+    font-family: "Meta", sans-serif;
+    cursor: default;
+}
+
+p {
+    background-color: #00030968;
+    font-size: 1.25rem;
+    font-family: "Meta", sans-serif;
+}
+
+.outline-image {
+    border: 5px solid black; /* Ancho, estilo y color del borde */
+}
+
+.container-nav {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: flex-start; /* Aligns to the top vertically */
+  }
+
+.horizontal-list {
+    list-style-type: none;
+    padding: 0; 
+    margin: 0; 
+    display: flex;
+}
+  
+.horizontal-list li {
+    margin-right: 10px;
+}
+
+.button-69 {
+  background-color: initial;
+  background-image: linear-gradient(#01477F 0, #001834 100%);
+  border-radius: 5px;
+  border-style: none;
+  box-shadow: rgba(245, 244, 247, .25) 0 1px 1px inset;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Meta", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  height: 60px;
+  line-height: 60px;
+  margin-left: -4px;
+  outline: 0;
+  text-align: center;
+  transition: all .3s cubic-bezier(.05, .03, .35, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: bottom;
+  width: 190px;
+}
+
+.button-69:hover {
+  opacity: .7;
+}
+
+/*CONTACT*/
+
+.map {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+.text-column {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+    padding-right: 20px;
+}
+.image-column-wrapper {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.image-column {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    padding-left: 20px;
+}
+.image-column img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+@media (max-width: 768px) {
+    .map {
+        flex-direction: column;
+        text-align: center;
+    }
+    .image-column-wrapper {
+        justify-content: center;
+    }
+}
+
+/*FOOTER*/
+
+@media screen and (max-width: 1000px) {
+  .button-69 {
+    font-size: 14px;
+    height: 55px;
+    line-height: 55px;
+    width: 150px;
+  }
+}
+footer {
+    background: #333;
+    color: white;
+    padding: 20px 0;
+}
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    padding: 10px;
+}
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px;
+}
+.footer-column h3 {
+    border-bottom: 2px solid #777;
+    padding-bottom: 5px;
+}
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-column ul li {
+    margin: 5px 0;
+}
+.footer-column a {
+    color: white;
+    text-decoration: none;
+}
+.footer-column a:hover {
+    text-decoration: underline;
+}
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
