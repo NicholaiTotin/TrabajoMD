@@ -1,12 +1,20 @@
 @font-face {
     src: url("https://www.axis-praxis.org/fonts/webfonts/MetaVariableDemo-Set.woff2")
-        format("woff2");
+    format("woff2");
     font-family: "Meta";
     font-style: normal;
     font-weight: normal;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body {
+    display: flex;
+    flex-direction: column;
     font-family: Arial, sans-serif;
     background-color: #394a5b;
     color: #ffffff;
@@ -16,6 +24,12 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+main{
+    flex: 1;
+    padding: 20px;
 }
 
 h1 {
@@ -27,10 +41,10 @@ h1 {
     color: transparent;
     font-family: "Meta", sans-serif;
     text-shadow: 10px 10px 0px #016CB4,
-        15px 15px 0px #001834,
-        20px 20px 0px #000309,
-        25px 25px 0px #0153AC,
-        45px 45px 10px #01477F;
+    15px 15px 0px #001834,
+    20px 20px 0px #000309,
+    25px 25px 0px #0153AC,
+    45px 45px 10px #01477F;
     cursor: default;
 }
 
@@ -40,14 +54,15 @@ img {
 }
 
 .resized-video {
-    width: 495px; /* Set a fixed width */
-    height: 320px; /* Set a fixed height */
-    object-fit: cover; /* Ensures the image covers the area without distortion */
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 .video-container {
-    display: flex; /* Align images side by side */
-    gap: 5px; /* Add space between images */
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .eslogan {
@@ -91,55 +106,81 @@ p {
     font-family: "Meta", sans-serif;
 }
 
-.outline-image {
-    border: 5px solid black; /* Ancho, estilo y color del borde */
-}
-
 .container-nav {
     display: flex;
-    justify-content: center; /* Centers horizontally */
-    align-items: flex-start; /* Aligns to the top vertically */
-  }
+    justify-content: center;
+    align-items: flex-start;
+}
 
 .horizontal-list {
     list-style-type: none;
     padding: 0; 
     margin: 0; 
     display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
-  
+
 .horizontal-list li {
     margin-right: 10px;
+    flex: 1;
+    max-width: 350px;
+    padding: 15px;
 }
 
 .button-69 {
-  background-color: initial;
-  background-image: linear-gradient(#01477F 0, #001834 100%);
-  border-radius: 5px;
-  border-style: none;
-  box-shadow: rgba(245, 244, 247, .25) 0 1px 1px inset;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  font-family: "Meta", sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  height: 60px;
-  line-height: 60px;
-  margin-left: -4px;
-  outline: 0;
-  text-align: center;
-  transition: all .3s cubic-bezier(.05, .03, .35, 1);
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: bottom;
-  width: 190px;
+    text-decoration: none; 
+    background-color: initial;
+    background-image: linear-gradient(#01477F 0, #001834 100%);
+    border-radius: 5px;
+    border-style: none;
+    box-shadow: rgba(245, 244, 247, .25) 0 1px 1px inset;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Meta", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    height: 60px;
+    line-height: 60px;
+    margin-left: -4px;
+    outline: 0;
+    text-align: center;
+    transition: all .3s cubic-bezier(.05, .03, .35, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: bottom;
+    width: 190px;
 }
 
-.button-69:hover {
-  opacity: .7;
+.button-69.active {
+    background-color: #001834;
+    background-image: none;
 }
+
+
+.button-69:hover {
+    opacity: .7;
+}
+
+/*INDEX*/
+.column {
+    display: table-cell; /* Esto permite el centrado vertical */
+  width: 48%;
+  padding: 2%;
+  box-sizing: border-box;
+  margin: 0 1%;
+  vertical-align: middle; /* Centrado vertical */
+  height: 300px; /* Altura fija para demostración */
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 
 /*CONTACT*/
 
@@ -182,6 +223,7 @@ p {
     display: block;
     border-radius: 10px;
 }
+
 @media (max-width: 768px) {
     .map {
         flex-direction: column;
@@ -190,17 +232,24 @@ p {
     .image-column-wrapper {
         justify-content: center;
     }
+    .horizontal-list {
+        flex-direction: column;
+        align-items: center;
+    }
+    .horizontal-list li {
+        max-width: 100%;
+    }
 }
 
 /*FOOTER*/
 
 @media screen and (max-width: 1000px) {
-  .button-69 {
-    font-size: 14px;
-    height: 55px;
-    line-height: 55px;
-    width: 150px;
-  }
+    .button-69 {
+        font-size: 14px;
+        height: 55px;
+        line-height: 55px;
+        width: 150px;
+    }
 }
 footer {
     background: #333;
@@ -238,9 +287,90 @@ footer {
 .footer-column a:hover {
     text-decoration: underline;
 }
+footer .social-icon{
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
 @media (max-width: 768px) {
     .footer-container {
         flex-direction: column;
         text-align: center;
     }
 }
+
+.start-img {
+    border: 5px solid black;
+    width: 100%;
+}
+
+/* PRESUPUESTO */
+.presupuesto-form-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.presupuesto-form-container .form-field {
+    margin: 40px 0;
+}
+
+.presupuesto-form-container .form-field input{
+    width: 100%;
+}
+
+.presupuesto-form-container .form-column {
+    flex: 1;
+    min-width: 250px;
+    padding: 20px;
+}
+
+.presupuesto-form-container label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+.presupuesto-form-container input,
+.presupuesto-form-container textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.presupuesto-form-container textarea {
+    resize: none;
+}
+
+.presupuesto-form-container .politica {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.presupuesto-form-container .btn-enviar {
+    background: linear-gradient(45deg, #01477F, #001834);
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.presupuesto-form-container .btn-enviar:hover {
+    background: linear-gradient(45deg, #016CB4, #003060);
+}
+
